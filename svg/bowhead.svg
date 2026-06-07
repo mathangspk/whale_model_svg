@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <defs>
+    <linearGradient id="bowhead-skin" x1="100%" y1="0%" x2="0%" y2="0%"><stop offset="0%" stop-color="#1b252c" /><stop offset="50%" stop-color="#30434f" /><stop offset="100%" stop-color="#415967" /></linearGradient>
+    <linearGradient id="bowhead-belly" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f1f5f9" /><stop offset="100%" stop-color="#cbd5e1" /></linearGradient>
+  </defs>
+  <g class="whale-container">
+    <g class="flipper-back"><path d="M 160,115 C 165,128 180,142 190,145 C 192,145 188,136 176,124 Z" fill="#1b252c" opacity="0.6" /></g>
+    <g class="tail-fin" style="transform-origin: 290px 100px; transform-box: view-box;"><path d="M 290,96 C 298,90 310,72 326,64 C 318,87 315,97 310,100 C 315,103 318,113 326,136 C 310,128 298,110 290,104 Z" fill="url(#bowhead-skin)" /></g>
+    <g class="body">
+      <path d="M 290,96 C 250,118 200,130 150,130 C 100,130 70,125 50,108 C 43,103 44,98 50,96 C 75,85 90,75 110,75 C 135,75 170,68 210,68 C 250,68 275,86 290,104 Z" fill="url(#bowhead-skin)" />
+      <path d="M 50,108 C 43,103 44,98 50,96 C 65,92 78,92 84,102 C 84,112 65,116 50,108 Z" fill="url(#bowhead-belly)" />
+      <path d="M 48,101 C 60,94 80,90 102,106" stroke="#1b252c" stroke-width="1.5" fill="none" stroke-linecap="round" />
+      <ellipse cx="50" cy="106" rx="1.2" ry="0.8" fill="#1b252c" /><ellipse cx="56" cy="107" rx="1.5" ry="1" fill="#1b252c" /><ellipse cx="62" cy="108" rx="1.5" ry="1" fill="#1b252c" /><ellipse cx="69" cy="107" rx="1.2" ry="0.8" fill="#1b252c" /><ellipse cx="75" cy="105" rx="1" ry="0.7" fill="#1b252c" />
+      <path d="M 265,91 C 270,95 273,100 274,105 C 270,108 265,108 261,105 C 260,100 261,95 265,91 Z" fill="#ffffff" opacity="0.8" />
+      <circle cx="112" cy="98" r="2.2" fill="#ffffff" /><circle cx="112" cy="98" r="1.1" fill="#1b252c" /><circle cx="113" cy="97" r="0.5" fill="#ffffff" />
+    </g>
+    <g class="flipper-front" style="transform-origin: 160px 115px; transform-box: view-box;"><path d="M 160,115 C 165,130 180,148 195,152 C 197,152 192,142 178,128 C 170,120 165,115 160,115 Z" fill="url(#bowhead-skin)" stroke="#23313a" stroke-width="0.5" /></g>
+  </g>
+</svg>

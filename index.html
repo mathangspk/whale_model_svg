@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whale SVG Animation Showcase</title>
+  <link rel="stylesheet" href="css/base.css?v=1.0.3">
+  <link rel="stylesheet" href="css/layout.css?v=1.0.3">
+  <link rel="stylesheet" href="css/ocean.css?v=1.0.3">
+  <link rel="stylesheet" href="css/animations.css?v=1.0.3">
+  <link rel="stylesheet" href="css/ui.css?v=1.0.3">
+</head>
+<body>
+  <header class="header-bar"><div class="logo">🐋 Whale Animation Showcase</div></header>
+  <main class="container">
+    <aside class="sidebar">
+      <h2>Whale Species</h2>
+      <ul class="whale-list"><li><button class="whale-btn active" data-whale="blue">Blue Whale</button></li><li><button class="whale-btn" data-whale="sperm">Sperm Whale</button></li><li><button class="whale-btn" data-whale="bowhead">Bowhead Whale</button></li><li><button class="whale-btn" data-whale="gray">Gray Whale</button></li><li><button class="whale-btn" data-whale="north_right">N. Atlantic Right</button></li><li><button class="whale-btn" data-whale="southern_right">Southern Right</button></li></ul>
+      <div class="controls-section"><h2>Actions</h2><button class="action-btn" data-action="swim">Swim</button><button class="action-btn" data-action="dive">Dive</button><button class="action-btn" data-action="breach">Breach</button></div>
+    </aside>
+    <section class="main-content">
+      <div class="viewport-container">
+        <div class="sky-bg"></div>
+        <div class="water-surface"><svg width="200%" height="20" viewBox="0 0 1000 20" preserveAspectRatio="none" style="animation: wave-flow 12s linear infinite;"><path d="M0,10 C150,20 350,0 500,10 C650,20 850,0 1000,10 L1000,20 L0,20 Z" fill="var(--bg-deep)" /></svg></div>
+        <div class="god-rays"><div class="god-ray" style="left: 15%; animation: godray-shimmer 6s infinite;"></div><div class="god-ray" style="left: 45%; animation: godray-shimmer 8s infinite 1s;"></div><div class="god-ray" style="left: 75%; animation: godray-shimmer 7s infinite 2s;"></div></div>
+        <div class="whale-stage"></div>
+      </div>
+      <div class="inspector-panel">
+        <div class="inspector-header"><span class="inspector-title">Raw SVG Source Code</span><button class="copy-btn" id="copy-code-btn">Copy SVG</button></div>
+        <pre class="code-view"><code id="svg-code"></code></pre>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

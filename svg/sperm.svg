@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <defs>
+    <linearGradient id="sperm-skin" x1="100%" y1="0%" x2="0%" y2="0%"><stop offset="0%" stop-color="#1e2930" /><stop offset="60%" stop-color="#2d3d49" /><stop offset="100%" stop-color="#3d505e" /></linearGradient>
+    <linearGradient id="sperm-belly" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#24313b" /><stop offset="100%" stop-color="#516473" /></linearGradient>
+  </defs>
+  <g class="whale-container">
+    <g class="flipper-back"><path d="M 160,124 C 157,138 162,152 168,158 C 171,158 170,148 164,134 Z" fill="#1e2930" opacity="0.6" /></g>
+    <g class="tail-fin" style="transform-origin: 290px 100px; transform-box: view-box;"><path d="M 290,94 C 300,90 318,80 338,74 C 324,94 314,98 302,100 C 314,102 324,106 338,126 C 318,116 300,110 290,106 Z" fill="url(#sperm-skin)" /></g>
+    <g class="body">
+      <path d="M 290,94 C 265,88 230,78 210,78 C 206,72 200,68 194,68 C 190,68 185,78 170,78 C 120,78 100,70 45,70 C 38,70 38,78 40,120 C 42,130 50,132 65,132 C 130,132 210,122 290,106 Z" fill="url(#sperm-skin)" />
+      <path d="M 270,104 C 230,120 180,132 110,132 C 100,132 95,128 95,124 C 150,124 210,112 270,104 Z" fill="url(#sperm-belly)" />
+      <path d="M 125,120 C 100,121 75,121 68,120 C 65,120 65,123 68,123 C 80,124 100,124 125,120 Z" fill="#cbd5e1" />
+      <path d="M 115,121 L 75,121" stroke="#1e2930" stroke-width="1" stroke-dasharray="1.2,1.2" />
+      <path d="M 85,82 C 120,82 155,87 165,102 C 155,108 120,107 85,102 Z" fill="#cbd5e1" opacity="0.18" />
+      <path d="M 226,77 Q 231,73 235,76 Q 231,78 226,77 Z" fill="url(#sperm-skin)" /><path d="M 238,79 Q 242,75 246,78 Q 242,80 238,79 Z" fill="url(#sperm-skin)" /><path d="M 249,81 Q 253,77 257,80 Q 253,82 249,81 Z" fill="url(#sperm-skin)" />
+      <circle cx="95" cy="108" r="1.5" fill="#ffffff" /><circle cx="95" cy="108" r="0.7" fill="#000000" />
+    </g>
+    <g class="flipper-front" style="transform-origin: 165px 126px; transform-box: view-box;"><path d="M 165,126 C 160,142 170,158 178,162 C 182,162 180,150 174,136 Z" fill="url(#sperm-skin)" stroke="#2d3d49" stroke-width="0.5" /></g>
+  </g>
+</svg>

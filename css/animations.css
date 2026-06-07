@@ -1,0 +1,15 @@
+.whale-stage { position: absolute; width: 400px; height: 200px; z-index: 3; transform-origin: center center; transition: opacity 0.5s ease; }
+.swim-active { animation: swim-bob 4s ease-in-out infinite; }
+.swim-active .tail-fin { animation: tail-wiggle 1.5s ease-in-out infinite; }
+.swim-active .flipper-front { animation: flipper-wiggle 3s ease-in-out infinite; }
+@keyframes swim-bob { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-10px) rotate(1deg); } }
+@keyframes tail-wiggle { 0%, 100% { transform: rotate(-8deg); } 50% { transform: rotate(8deg); } }
+@keyframes flipper-wiggle { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(7deg); } }
+.dive-active { animation: dive-action 3.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+.dive-active .tail-fin { animation: tail-wiggle 0.6s ease-in-out infinite; }
+@keyframes dive-action { 0% { transform: translate(0, 0) rotate(0deg); opacity: 1; } 15% { transform: translate(-40px, 10px) rotate(-15deg); } 40% { transform: translate(-140px, 80px) rotate(-35deg); } 70% { transform: translate(-260px, 155px) rotate(-20deg); } 90% { transform: translate(-340px, 180px) rotate(-5deg); opacity: 0.2; } 100% { transform: translate(-390px, 185px) rotate(0deg); opacity: 0; } }
+.breach-active { animation: breach-action 4.5s cubic-bezier(0.25, 1, 0.5, 1) forwards; z-index: 5 !important; }
+.breach-active .tail-fin { animation: tail-wiggle 0.5s ease-in-out infinite; }
+@keyframes breach-action { 0% { transform: translate(300px, 200px) rotate(35deg); opacity: 0; } 5% { opacity: 1; } 25% { transform: translate(100px, 60px) rotate(35deg); } 45% { transform: translate(-80px, -150px) rotate(-15deg); } 55% { transform: translate(-160px, -120px) rotate(-45deg); } 75% { transform: translate(-280px, 50px) rotate(-60deg); } 90% { transform: translate(-340px, 150px) rotate(-25deg); opacity: 0.8; } 100% { transform: translate(-380px, 200px) rotate(0deg); opacity: 0; } }
+@keyframes wave-flow { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@keyframes godray-shimmer { 0%, 100% { opacity: 0.12; transform: scaleX(1) rotate(-25deg); } 50% { opacity: 0.22; transform: scaleX(1.15) rotate(-22deg); } }

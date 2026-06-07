@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <defs>
+    <linearGradient id="right-skin" x1="100%" y1="0%" x2="0%" y2="0%"><stop offset="0%" stop-color="#1b1d1e" /><stop offset="60%" stop-color="#2c2e30" /><stop offset="100%" stop-color="#3d4042" /></linearGradient>
+  </defs>
+  <g class="whale-container">
+    <g class="flipper-back"><path d="M 195,116 C 190,132 198,148 206,154 C 210,154 208,142 202,128 Z" fill="#1b1d1e" opacity="0.6" /></g>
+    <g class="tail-fin" style="transform-origin: 290px 100px; transform-box: view-box;"><path d="M 290,100 C 305,90 320,72 342,60 C 330,84 315,95 302,100 C 315,105 330,116 342,140 C 320,128 305,110 290,100 Z" fill="url(#right-skin)" /></g>
+    <g class="body">
+      <path d="M 290,100 C 260,95 220,70 170,70 C 120,70 80,85 55,105 C 52,108 55,112 62,114 C 120,130 220,126 290,100 Z" fill="url(#right-skin)" />
+      <path d="M 180,121 C 200,123 230,121 240,118 C 230,115 200,117 180,121 Z" fill="#ffffff" opacity="0.95" />
+      <path d="M 135,114 C 115,105 85,92 62,107" stroke="rgba(0,0,0,0.4)" stroke-width="1.8" fill="none" stroke-linecap="round" />
+      <path d="M 66,103 C 62,103 59,105 60,107 C 62,109 66,107 68,105 Z" fill="#e2e8f0" opacity="0.9" stroke="#94a3b8" stroke-width="0.3" />
+      <path d="M 72,99 C 68,99 67,101 69,102 C 71,103 73,101 74,99 Z" fill="#e2e8f0" opacity="0.85" />
+      <path d="M 105,116 C 98,116 95,119 98,120 C 102,120 106,118 105,116 Z" fill="#e2e8f0" opacity="0.85" stroke="#94a3b8" stroke-width="0.3" />
+      <path d="M 122,85 C 118,85 115,87 116,88 C 118,89 121,87 122,85 Z" fill="#e2e8f0" opacity="0.85" />
+      <circle cx="140" cy="106" r="1.8" fill="#ffffff" /><circle cx="140" cy="106" r="0.8" fill="#000000" />
+    </g>
+    <g class="flipper-front" style="transform-origin: 175px 120px; transform-box: view-box;"><path d="M 175,120 C 167,144 178,170 190,180 C 195,180 194,164 185,138 Z" fill="url(#right-skin)" stroke="#2c2e30" stroke-width="0.5" /></g>
+  </g>
+</svg>

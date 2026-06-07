@@ -1,0 +1,6 @@
+.water-surface { position: absolute; top: 180px; left: 0; width: 200%; height: 20px; background: repeat-x; z-index: 4; pointer-events: none; opacity: 0.95; }
+.sky-bg { position: absolute; top: 0; left: 0; width: 100%; height: 180px; background: linear-gradient(to bottom, #bae6fd 0%, #e0f2fe 80%, #7dd3fc 100%); z-index: 1; }
+.god-rays { position: absolute; top: 180px; left: 0; width: 100%; height: calc(100% - 180px); pointer-events: none; z-index: 2; overflow: hidden; opacity: 0.35; }
+.god-ray { position: absolute; top: -50px; width: 120px; height: 150%; background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 80%); transform: rotate(-25deg); transform-origin: top left; filter: blur(12px); }
+.bubble { position: absolute; border-radius: 50%; background: rgba(255, 255, 255, 0.5); box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.8), 0 0 4px rgba(255, 255, 255, 0.3); pointer-events: none; z-index: 3; }
+.splash-particle { position: absolute; background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(186, 230, 253, 0.6) 80%); border-radius: 50%; pointer-events: none; z-index: 6; }
