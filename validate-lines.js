@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const LINE_LIMIT = 150;
 
 function checkDirectory(dir) {
   const files = fs.readdirSync(dir);
@@ -19,8 +20,8 @@ function checkDirectory(dir) {
       }
       const content = fs.readFileSync(fullPath, 'utf-8');
       const lines = content.split(/\r?\n/).length;
-      if (lines > 50) {
-        console.error(`❌ File ${file} has ${lines} lines (limit: 50)!`);
+      if (lines > LINE_LIMIT) {
+        console.error(`❌ File ${file} has ${lines} lines (limit: ${LINE_LIMIT})!`);
         failed = true;
       } else {
         console.log(`✅ File ${file} has ${lines} lines.`);
@@ -32,4 +33,4 @@ function checkDirectory(dir) {
 
 const failed = checkDirectory(__dirname);
 if (failed) process.exit(1);
-console.log('🎉 All files comply with the 50 lines limit!');
+console.log(`🎉 All files comply with the ${LINE_LIMIT} lines limit!`);

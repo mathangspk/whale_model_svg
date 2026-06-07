@@ -2,11 +2,16 @@ export class Whale {
   constructor(stage, codeView) {
     this.stage = stage;
     this.codeView = codeView;
+    this._cache = {};
   }
+
   async load(id) {
-    const res = await fetch(`svg/${id}.svg?t=${Date.now()}`);
-    if (!res.ok) throw new Error(`Load failed: ${id}`);
-    const svgText = await res.text();
+    if (!this._cache[id]) {
+      const res = await fetch(`svg/${id}.svg`);
+      if (!res.ok) throw new Error(`Load failed: ${id}`);
+      this._cache[id] = await res.text();
+    }
+    const svgText = this._cache[id];
     this.stage.innerHTML = svgText;
     const svg = this.stage.querySelector('svg');
     if (svg) {

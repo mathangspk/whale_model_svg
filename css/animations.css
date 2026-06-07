@@ -1,15 +1,77 @@
-.whale-stage { position: absolute; width: 400px; height: 200px; z-index: 3; transform-origin: center center; transition: opacity 0.5s ease; }
-.swim-active { animation: swim-bob 4s ease-in-out infinite; }
-.swim-active .tail-fin { animation: tail-wiggle 1.5s ease-in-out infinite; }
-.swim-active .flipper-front { animation: flipper-wiggle 3s ease-in-out infinite; }
-@keyframes swim-bob { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-10px) rotate(1deg); } }
-@keyframes tail-wiggle { 0%, 100% { transform: rotate(-8deg); } 50% { transform: rotate(8deg); } }
-@keyframes flipper-wiggle { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(7deg); } }
-.dive-active { animation: dive-action 3.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
-.dive-active .tail-fin { animation: tail-wiggle 0.6s ease-in-out infinite; }
-@keyframes dive-action { 0% { transform: translate(0, 0) rotate(0deg); opacity: 1; } 15% { transform: translate(-40px, 10px) rotate(-15deg); } 40% { transform: translate(-140px, 80px) rotate(-35deg); } 70% { transform: translate(-260px, 155px) rotate(-20deg); } 90% { transform: translate(-340px, 180px) rotate(-5deg); opacity: 0.2; } 100% { transform: translate(-390px, 185px) rotate(0deg); opacity: 0; } }
-.breach-active { animation: breach-action 4.5s cubic-bezier(0.25, 1, 0.5, 1) forwards; z-index: 5 !important; }
-.breach-active .tail-fin { animation: tail-wiggle 0.5s ease-in-out infinite; }
-@keyframes breach-action { 0% { transform: translate(300px, 200px) rotate(35deg); opacity: 0; } 5% { opacity: 1; } 25% { transform: translate(100px, 60px) rotate(35deg); } 45% { transform: translate(-80px, -150px) rotate(-15deg); } 55% { transform: translate(-160px, -120px) rotate(-45deg); } 75% { transform: translate(-280px, 50px) rotate(-60deg); } 90% { transform: translate(-340px, 150px) rotate(-25deg); opacity: 0.8; } 100% { transform: translate(-380px, 200px) rotate(0deg); opacity: 0; } }
-@keyframes wave-flow { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-@keyframes godray-shimmer { 0%, 100% { opacity: 0.12; transform: scaleX(1) rotate(-25deg); } 50% { opacity: 0.22; transform: scaleX(1.15) rotate(-22deg); } }
+.whale-stage {
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  z-index: 3;
+  transform-origin: center center;
+  transition: opacity 0.5s ease;
+}
+
+/* ── Swim ── */
+.swim-active {
+  animation: swim-bob 5s ease-in-out infinite;
+}
+
+.swim-active .tail-fin {
+  animation: tail-wiggle 2s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.swim-active .flipper-front {
+  animation: flipper-glide 4s ease-in-out infinite;
+  animation-delay: -1.8s;
+}
+
+/*
+  swim-bob: 5-point organic vertical float with gentle nose pitch.
+  The body dips slightly at start (weighted), rises smoothly to peak,
+  then settles back — mimicking real whale buoyancy rhythm.
+*/
+@keyframes swim-bob {
+  0%   { transform: translateY(2px)   rotate(-0.5deg); }
+  25%  { transform: translateY(-10px) rotate(0.8deg);  }
+  50%  { transform: translateY(-15px) rotate(1.6deg);  }
+  75%  { transform: translateY(-7px)  rotate(0.6deg);  }
+  100% { transform: translateY(2px)   rotate(-0.5deg); }
+}
+
+/*
+  tail-wiggle: 4-stop sinusoidal beat so motion passes through zero
+  more gradually, giving a fluid "S" feeling instead of a sharp snap.
+*/
+@keyframes tail-wiggle {
+  0%   { transform: rotate(-14deg); }
+  30%  { transform: rotate(-1deg);  }
+  50%  { transform: rotate(14deg);  }
+  70%  { transform: rotate(1deg);   }
+  100% { transform: rotate(-14deg); }
+}
+
+/*
+  flipper-glide: slow stabilizing sweep — runs at a different period
+  than the tail (4s vs 2s) so the two never sync and motion stays organic.
+*/
+@keyframes flipper-glide {
+  0%   { transform: rotate(-6deg); }
+  50%  { transform: rotate(8deg);  }
+  100% { transform: rotate(-6deg); }
+}
+
+/* ── Dive / Breach — body movement handled by JS (Web Animations API) ── */
+.dive-active .tail-fin {
+  animation: tail-wiggle 0.6s ease-in-out infinite;
+}
+
+.breach-active .tail-fin {
+  animation: tail-wiggle 0.5s ease-in-out infinite;
+}
+
+/* ── Ocean effects ── */
+@keyframes wave-flow {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes godray-shimmer {
+  0%, 100% { opacity: 0.12; transform: scaleX(1) rotate(-25deg);    }
+  50%       { opacity: 0.22; transform: scaleX(1.15) rotate(-22deg); }
+}

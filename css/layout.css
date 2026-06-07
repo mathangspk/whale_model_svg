@@ -1,6 +1,60 @@
-.sidebar { background: var(--glass-bg); border-right: 1px solid var(--glass-border); backdrop-filter: blur(12px); display: flex; flex-direction: column; padding: 1.5rem; gap: 1.5rem; z-index: 10; }
-.main-content { display: grid; grid-template-rows: 1fr 240px; height: 100%; overflow: hidden; position: relative; }
-.viewport-container { position: relative; background: linear-gradient(to bottom, var(--bg-shallow) 0%, var(--bg-mid) 50%, var(--bg-deep) 100%); overflow: hidden; display: flex; justify-content: center; align-items: center; }
-.inspector-panel { background: rgba(4, 11, 24, 0.85); border-top: 1px solid var(--glass-border); backdrop-filter: blur(16px); padding: 1rem 1.5rem; display: grid; grid-template-rows: auto 1fr; gap: 0.5rem; overflow: hidden; z-index: 5; }
-.header-bar { background: var(--glass-bg); border-bottom: 1px solid var(--glass-border); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 10; }
-.logo { font-weight: 700; font-size: 1.25rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: flex; align-items: center; gap: 0.5rem; }
+.sidebar {
+  background: var(--glass-bg);
+  border-right: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  z-index: 10;
+}
+
+.main-content {
+  display: grid;
+  grid-template-rows: 1fr 240px;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.viewport-container {
+  position: relative;
+  background: linear-gradient(to bottom, var(--bg-shallow) 0%, var(--bg-mid) 50%, var(--bg-deep) 100%);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inspector-panel {
+  background: rgba(4, 11, 24, 0.85);
+  border-top: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  padding: 1rem 1.5rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0.5rem;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.header-bar {
+  background: var(--glass-bg);
+  border-bottom: 1px solid var(--glass-border);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
