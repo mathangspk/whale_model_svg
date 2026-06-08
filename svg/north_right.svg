@@ -13,7 +13,7 @@
   </defs>
   <g class="whale-container" style="animation: nr-float 4s ease-in-out infinite;">
     <g class="tail-fin" style="transform-origin: 660px 205px; transform-box: view-box; animation: nr-tailWag 1.5s ease-in-out infinite alternate;">
-      <path d="M 640,196 C 676,174 712,144 740,130 C 762,112 800,112 830,122 C 812,142 762,174 718,196 C 762,208 812,238 830,268 C 800,280 762,280 740,260 C 712,240 676,220 640,220 Z" fill="#1c1c1c"/>
+      <path d="M 628,198 C 650,186 680,166 720,145 C 752,128 790,115 825,115 C 808,135 774,164 740,188 C 730,192 724,200 730,208 C 774,232 808,252 825,275 C 790,278 752,268 720,250 C 680,232 650,218 628,208 Z" fill="#1c1c1c"/>
     </g>
     <g class="body">
       <path d="M 50,220 C 40,180 90,180 130,185 C 180,190 230,195 320,195 C 470,195 580,210 650,195 C 660,200 650,220 630,230 C 550,290 470,330 360,340 C 270,345 200,320 160,290 C 100,290 50,260 50,220 Z" fill="url(#nr-bodyGrad)"/>
