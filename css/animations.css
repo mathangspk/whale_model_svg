@@ -9,60 +9,79 @@
 
 /* ── Swim ── */
 .swim-active {
-  animation: swim-bob 5s ease-in-out infinite;
+  animation: swim-bob 5s linear infinite;
 }
 
 .swim-active .tail-fin {
-  animation: tail-wiggle 2s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  animation: tail-wiggle 2s linear infinite;
 }
 
 .swim-active .flipper-front {
-  animation: flipper-glide 4s ease-in-out infinite;
+  animation: flipper-glide 4s linear infinite;
   animation-delay: -1.8s;
 }
 
 /*
-  swim-bob: 5-point organic vertical float with gentle nose pitch.
-  The body dips slightly at start (weighted), rises smoothly to peak,
-  then settles back — mimicking real whale buoyancy rhythm.
+  swim-bob: 9-stop cosine curve (linear between stops).
+  More stops + linear = smooth wave without ease-in-out "mini-bumps" at
+  each keyframe. Values follow cos(t) so the body naturally lingers at
+  the top/bottom of each stroke — no extra easing needed.
 */
 @keyframes swim-bob {
   0%   { transform: translateY(2px)   rotate(-0.5deg); }
-  25%  { transform: translateY(-10px) rotate(0.8deg);  }
+  12%  { transform: translateY(-4px)  rotate(0.2deg);  }
+  25%  { transform: translateY(-10px) rotate(0.9deg);  }
+  38%  { transform: translateY(-14px) rotate(1.4deg);  }
   50%  { transform: translateY(-15px) rotate(1.6deg);  }
-  75%  { transform: translateY(-7px)  rotate(0.6deg);  }
+  62%  { transform: translateY(-13px) rotate(1.3deg);  }
+  75%  { transform: translateY(-7px)  rotate(0.5deg);  }
+  88%  { transform: translateY(-1px)  rotate(-0.2deg); }
   100% { transform: translateY(2px)   rotate(-0.5deg); }
 }
 
 /*
-  tail-wiggle: 4-stop sinusoidal beat so motion passes through zero
-  more gradually, giving a fluid "S" feeling instead of a sharp snap.
+  tail-wiggle: 13-stop sine wave — one full period sampled every 30°.
+  linear + 13 stops ≈ true sine, eliminating the snap/stutter of
+  ease-in-out across fewer keyframes.
 */
 @keyframes tail-wiggle {
   0%   { transform: rotate(-14deg); }
-  30%  { transform: rotate(-1deg);  }
+  8%   { transform: rotate(-12deg); }
+  17%  { transform: rotate(-7deg);  }
+  25%  { transform: rotate(0deg);   }
+  33%  { transform: rotate(7deg);   }
+  42%  { transform: rotate(12deg);  }
   50%  { transform: rotate(14deg);  }
-  70%  { transform: rotate(1deg);   }
+  58%  { transform: rotate(12deg);  }
+  67%  { transform: rotate(7deg);   }
+  75%  { transform: rotate(0deg);   }
+  83%  { transform: rotate(-7deg);  }
+  92%  { transform: rotate(-12deg); }
   100% { transform: rotate(-14deg); }
 }
 
 /*
-  flipper-glide: slow stabilizing sweep — runs at a different period
-  than the tail (4s vs 2s) so the two never sync and motion stays organic.
+  flipper-glide: 7-stop sine — period differs from tail (4s vs 2s)
+  so they never lock in sync. Amplitude asymmetric (-6°/+8°) for a
+  natural stabilising sweep.
 */
 @keyframes flipper-glide {
   0%   { transform: rotate(-6deg); }
+  17%  { transform: rotate(-4deg); }
+  33%  { transform: rotate(1deg);  }
   50%  { transform: rotate(8deg);  }
+  67%  { transform: rotate(5deg);  }
+  83%  { transform: rotate(0deg);  }
   100% { transform: rotate(-6deg); }
 }
 
-/* ── Dive / Breach — body movement handled by JS (Web Animations API) ── */
+/* ── Dive / Breach — tail keeps a fast beat; body handled by JS ── */
 .dive-active .tail-fin {
-  animation: tail-wiggle 0.6s ease-in-out infinite;
+  animation: tail-wiggle 0.6s linear infinite;
 }
 
 .breach-active .tail-fin {
-  animation: tail-wiggle 0.5s ease-in-out infinite;
+  animation: tail-wiggle 0.5s linear infinite;
 }
 
 /* ── Ocean effects ── */
